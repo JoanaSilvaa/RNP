@@ -5,7 +5,7 @@
 #include <libprg/libprg.h>
 #include <stdlib.h>
 
-//recebe como argumento via linha de comando argv (contendo os operados e operandos usados na calculadora)
+//recebe como argumento via linha de comando argv (contendo os operadores e operandos usados na calculadora)
 //e argc que contem o numero de argumentos
 int Notacao(int argc, char *argv[]) {
     pilha_t Pilha_notacao;
@@ -16,10 +16,10 @@ int Notacao(int argc, char *argv[]) {
 
     //loop que verfica se o  argumento é um operando
     for (int i = 1; i < argc; ++i) {
-        //criação de um ponteiro que recebe os argumentos
+        //criação de um ponteiro que recebe os argumentos (operandos e operadores)
         char *x = argv[i];
         //se o ponteiro x for o operador *
-        //Se for operador, retira o penúltimo e o último operando da pilha. Executa
+        //retira o penúltimo e o último operando da pilha. Executa
         //a operação sobre os operandos e armazene o resultado na pilha
         if (*x == '*'){
             float a = pop(&Pilha_notacao);
@@ -28,7 +28,7 @@ int Notacao(int argc, char *argv[]) {
             push(&Pilha_notacao,result);
         }
         //se o ponteiro x for o operador /
-        //Se for operador, retira o penúltimo e o último operando da pilha. Executa
+        //retira o penúltimo e o último operando da pilha. Executa
         //a operação sobre os operandos e armazene o resultado na pilha
         else if(*x == '/'){
             float a = pop(&Pilha_notacao);
@@ -37,7 +37,7 @@ int Notacao(int argc, char *argv[]) {
             push(&Pilha_notacao,result);
         }
         //se o ponteiro x for o operador +
-        //Se for operador, retira o penúltimo e o último operando da pilha. Executa
+        //retira o penúltimo e o último operando da pilha. Executa
         //a operação sobre os operandos e armazene o resultado na pilha
         else if(*x == '+'){
             float a = pop(&Pilha_notacao);
@@ -46,7 +46,7 @@ int Notacao(int argc, char *argv[]) {
             push(&Pilha_notacao,result);
         }        
         //se o ponteiro x for o operador -
-        //Se for operador, retira o penúltimo e o último operando da pilha. Executa
+        //retira o penúltimo e o último operando da pilha. Executa
         //a operação sobre os operandos e armazene o resultado na pilha
         else if(*x == '-'){
             float a = pop(&Pilha_notacao);
@@ -54,9 +54,10 @@ int Notacao(int argc, char *argv[]) {
             result = b - a;
             push(&Pilha_notacao,result);
         }
-        //Se for operando, é empilhado
+        //Caso não for nenhuma das cituações anteriores
+        //é operando e é empilhado
+        //a função atof converte string para float
         else{
-            //a função atof converte string para float
             *x = atof(x);
             push(&Pilha_notacao,*x);
         }
