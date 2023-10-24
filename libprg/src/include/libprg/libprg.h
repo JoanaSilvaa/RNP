@@ -1,6 +1,7 @@
 #ifndef LIBPRG_LIBPRG_H
 #define LIBPRG_LIBPRG_H
 
+//Estrutura da pilha
 typedef struct{
     int *valores;
     int topo;
@@ -8,6 +9,7 @@ typedef struct{
 }pilha_t;
 
 //Pilha
+//Declaração de todas as funções utilizadas 
 void cria_pilha(pilha_t *fila, int capacidade);
 void imprime_pilha(pilha_t *pilha);
 void push(pilha_t *pilha, float x);
