@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <string.h>
 
-//Função que cria uma pilha, fazendo alocação dinâmica de memória (utilizando malloc) de uma quantidade pré-definida de elementos da pilha (tamanho argc).
+//Função que cria uma pilha, fazendo alocação dinâmica de memória (utilizando malloc) de uma quantidade pré-definida de elementos da pilha.
 void cria_pilha(pilha_t *pilha, int capacidade){
     pilha->valores = malloc(sizeof (int)*capacidade);
     //Mensagem de erro caso não seja possivel fazer a alocação de memoria
