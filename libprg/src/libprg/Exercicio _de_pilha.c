@@ -9,7 +9,7 @@
 //e argc que contem o numero de argumentos
 int Notacao(int argc, char *argv[]) {
     pilha_t Pilha_notacao;
-    //cria uma pilha chamada de Pilha_notacao
+    //cria uma pilha chamada de Pilha_notacao fazendo alocação dinâmica de memória de uma quantidade pré-definida (tamanho argc).
     cria_pilha(&Pilha_notacao,argc);
     //cria uma variavel que armanezará os resultados das orperações
     float result = 0;
