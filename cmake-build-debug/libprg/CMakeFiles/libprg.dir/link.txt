@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblibprg.a CMakeFiles/libprg.dir/src/libprg/Pilha.c.o CMakeFiles/libprg.dir/src/libprg/Exercicio__de_pilha.c.o CMakeFiles/libprg.dir/src/libprg/libprg.c.o
+/usr/bin/ranlib liblibprg.a
