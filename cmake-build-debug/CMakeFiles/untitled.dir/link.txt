@@ -1,1 +1,0 @@
-/usr/bin/cc -g CMakeFiles/untitled.dir/main.c.o CMakeFiles/untitled.dir/libprg/src/libprg/libprg.c.o -o untitled  libprg/liblibprg.a 
